@@ -11,9 +11,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 export class HomeComponent {
   menuOpen = false;
 
+  constructor() {
+
+  }
+
   goTo(link:string) {
     window.open(link, '_blank');
   }
+
 
 
   toggleMenu() {
