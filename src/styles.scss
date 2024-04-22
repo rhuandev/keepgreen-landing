@@ -1,0 +1,88 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$keepgreen-landing-primary: mat.define-palette(mat.$green-palette);
+$keepgreen-landing-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$keepgreen-landing-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$keepgreen-landing-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $keepgreen-landing-primary,
+      accent: $keepgreen-landing-accent,
+      warn: $keepgreen-landing-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($keepgreen-landing-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: rgb(242, 255, 250);
+  background: linear-gradient(
+    190deg,
+    rgba(242, 255, 250, 1) 0%,
+    rgba(179, 255, 232, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow-x: hidden;
+  margin: 15px 0px 0px 0px !important;
+}
+
+.mdc-tab__text-label {
+  font-weight: bold;
+  --mat-tab-header-inactive-label-text-color: #000 !important;
+}
+
+.mat-mdc-tab-body-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.mat-mdc-tab-body.mat-mdc-tab-body-active {
+  overflow-y: hidden !important;
+}
+
+.mat-elevation-z4 {
+  box-shadow: none !important;
+}
+
+p {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
