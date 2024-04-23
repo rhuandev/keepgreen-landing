@@ -253,7 +253,7 @@ header {
       }
 
       .card:nth-child(1) {
-        background: url("assets/robot-coins.png");
+        background: url("/src/assets/robot-coins.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
@@ -261,7 +261,7 @@ header {
       }
 
       .card:nth-child(2) {
-        background: url("assets/boxes.png");
+        background: url("/src/assets/boxes.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
@@ -269,7 +269,7 @@ header {
       }
 
       .card:nth-child(3) {
-        background: url("assets/coins.png");
+        background: url("/src/assets/coins.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
