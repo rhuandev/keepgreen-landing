@@ -253,7 +253,7 @@ header {
       }
 
       .card:nth-child(1) {
-        background: url("/src/assets/robot-coins.png");
+        background: url("../../../assets/robot-coins.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
@@ -261,7 +261,7 @@ header {
       }
 
       .card:nth-child(2) {
-        background: url("/src/assets/boxes.png");
+        background: url("../../../assets/boxes.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
@@ -269,7 +269,7 @@ header {
       }
 
       .card:nth-child(3) {
-        background: url("/src/assets/coins.png");
+        background: url("../../../assets/coins.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
         background-position: center center;
@@ -384,9 +384,13 @@ header {
       font-weight: 900;
     }
 
-    img {
+    .img-desktop {
       width: 80%;
       max-width: 1200px;
+      display: block;
+    }
+    .img-mobile {
+      display: none;
     }
   }
 }
@@ -519,7 +523,7 @@ footer {
         .bookmark {
           height: 290px;
           top: 178px;
-          right: -90px;
+          width: 330px;
         }
       }
 
@@ -533,6 +537,12 @@ footer {
 
       .text {
         font-size: 16px;
+      }
+    }
+
+    .pillars-container {
+      img {
+        width: 190px;
       }
     }
   }
@@ -556,7 +566,8 @@ footer {
           right: 50px;
         }
         .bookmark {
-          width: 386px;
+          width: 300px;
+          right: 0px;
         }
       }
 
@@ -570,9 +581,9 @@ footer {
         width: 50%;
         flex-direction: column;
 
-         p {
+        p {
           font-size: 18px;
-         }
+        }
       }
     }
 
@@ -601,6 +612,17 @@ footer {
             font-size: 14px;
           }
         }
+      }
+    }
+
+    .team-container {
+      .img-desktop {
+        display: none;
+      }
+
+      .img-mobile {
+        display: block;
+        width: 420px;
       }
     }
   }
@@ -646,7 +668,7 @@ footer {
         .bookmark {
           height: 190px;
           top: 128px;
-          width: 326px;
+          width: 215px;
         }
       }
     }
@@ -667,6 +689,86 @@ footer {
       font-weight: bold;
       flex-direction: column;
       gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .content-container {
+    .home-container {
+      .left-area {
+        .big-logo {
+          height: 80px;
+          width: 170px;
+        }
+      }
+
+      .text {
+        max-width: 180px;
+      }
+
+      .right-area {
+        .bookmark {
+          width: 165px;
+        }
+
+        img {
+          right: 0px;
+        }
+      }
+    }
+
+    .about-container {
+      margin-bottom: 50px;
+      .cards-container {
+        flex-direction: column;
+        height: 450px;
+      }
+    }
+
+    .team-container {
+      .img-mobile {
+        width: 330px;
+      }
+    }
+
+    .pillars-container {
+      img {
+        width: 160px;
+        left: -40px;
+      }
+      mat-tab-group {
+        .content {
+          padding: 40px 20px;
+          
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 365px) {
+  .content-container {
+    .home-container {
+      .left-area {
+        .big-logo {
+          height: 60px;
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .content-container {
+    .home-container {
+      .text {
+        max-width: 130px;
+      }
     }
   }
 }
