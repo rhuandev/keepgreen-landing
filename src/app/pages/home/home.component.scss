@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  margin: 10px 0px 0px 0px;
   svg {
     height: 69px;
   }
@@ -214,17 +214,16 @@ header {
       gap: 10px;
       width: 80%;
       max-width: 1200px;
-      padding: 20px;
 
       .card {
         background-color: #fff;
         height: 300px;
         flex: 1;
         border-radius: 16px;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: initial;
+        justify-content: flex-start;
         flex-direction: column;
         box-shadow:
           0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -232,52 +231,86 @@ header {
 
         h1 {
           text-align: center;
-          font-size: 32px;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: #19be83;
+          font-size: 28px;
           color: black;
+          margin-block-start: 0 !important;
+          margin-block-end: 0 !important;
+          padding-top: 10px;
         }
 
         p {
           opacity: 0;
           height: 0;
-          transition: all 0.3s ease;
-          text-align: center;
+          transition: all 0.5s ease;
+          text-align: right;
           max-width: 400px;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: bold;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: #19be83;
           color: black;
         }
       }
 
       .card:nth-child(1) {
-        background: url("../../../assets/robot-coins.png");
+        background: url("../../../assets/icons/recycle-transp.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center 70px;
         background-color: white;
+        background-size: 190px;
       }
 
       .card:nth-child(2) {
-        background: url("../../../assets/boxes.png");
+        background: url("../../../assets/icons/gaming-transp.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center 70px;
         background-color: white;
+        background-size: 190px;
       }
 
       .card:nth-child(3) {
-        background: url("../../../assets/coins.png");
+        background: url("../../../assets/icons/tokenization-transp.png");
         background-size: cover; /* <------ */
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center 70px;
         background-color: white;
+        background-size: 190px;
       }
 
       .card:hover {
         flex: 3;
+        align-items: flex-end;
+        justify-content: center;
+
+        &:nth-child(1) {
+          background: url("../../../assets/icons/recycle-earn.png");
+          background-repeat: no-repeat;
+          background-position: center left 30px;
+          background-color: white;
+          background-size: 280px;
+          backdrop-filter: blur(265px);
+          padding-right: 20px;
+        }
+
+        &:nth-child(2) {
+          background: url("../../../assets/icons/gaming.png");
+          background-repeat: no-repeat;
+          background-position: center left 30px;
+          background-color: white;
+          background-size: 250px;
+          backdrop-filter: blur(265px);
+          padding-right: 20px;
+        }
+
+        &:nth-child(3) {
+          background: url("../../../assets/icons/tokenization.png");
+          background-repeat: no-repeat;
+          background-position: center left 30px;
+          background-color: white;
+          background-size: 280px;
+          backdrop-filter: blur(265px);
+          padding-right: 20px;
+        }
 
         p {
           opacity: 1;
@@ -319,6 +352,9 @@ header {
       p {
         font-size: 22px;
         text-align: justify;
+        word-break: break-word;
+        hyphens: auto;
+        word-spacing: -0.05em;
       }
     }
   }
@@ -480,6 +516,90 @@ footer {
   }
 }
 
+@media (max-width: 1470px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 230px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 200px;
+          }
+
+          p {
+            max-width: 330px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          p {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          h1 {
+            font-size: 22px;
+          }
+          p {
+            font-size: 14px;
+            max-width: 240px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1111px) {
   .content-container {
     .home-container {
@@ -545,6 +665,57 @@ footer {
         width: 190px;
       }
     }
+
+    .about-container {
+      .cards-container {
+        .card {
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        flex-direction: column;
+        height: 700px;
+
+        .card {
+          align-items: flex-end;
+          justify-content: center;
+          padding-right: 30px;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            background-position: center left 30px;
+            background-size: 210px;
+          }
+
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 275px;
+          }
+
+          h1 {
+            font-size: 28px;
+          }
+
+          p {
+            max-width: 330px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -556,6 +727,7 @@ footer {
 
     .hamburger {
       display: initial;
+      padding-right: 20px;
     }
   }
 
@@ -603,6 +775,8 @@ footer {
 
     .about-container {
       .cards-container {
+        height: 520px;
+
         .card {
           h1 {
             font-size: 18px;
@@ -610,6 +784,19 @@ footer {
 
           p {
             font-size: 14px;
+            max-width: 220px;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            background-size: 165px;
+          }
+
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 185px;
           }
         }
       }
@@ -693,6 +880,41 @@ footer {
   }
 }
 
+@media (max-width: 535px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          p {
+            font-size: 12px;
+            max-width: 190px;
+          }
+
+          h1 {
+            font-size: 16px;
+          }
+
+          &:hover {
+            flex: 2;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            background-size: 125px;
+          }
+
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 145px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 460px) {
   .content-container {
     .home-container {
@@ -740,9 +962,52 @@ footer {
       mat-tab-group {
         .content {
           padding: 40px 20px;
-          
+
           p {
             font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          p {
+            max-width: 160px;
+          }
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            background-position: center left 10px;
+            background-size: 105px;
+          }
+
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-size: 115px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .content-container {
+    .about-container {
+      .cards-container {
+        .card {
+          &:hover:nth-child(1),
+          &:hover:nth-child(2),
+          &:hover:nth-child(3) {
+            background-position: center left 10px;
           }
         }
       }
